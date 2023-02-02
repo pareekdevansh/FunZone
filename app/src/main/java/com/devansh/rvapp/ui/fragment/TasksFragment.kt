@@ -1,4 +1,4 @@
-package com.devansh.rvapp
+package com.devansh.rvapp.ui.fragment
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.devansh.rvapp.R
+import com.devansh.rvapp.ui.TasksViewModel
 
 class TasksFragment : Fragment() {
 

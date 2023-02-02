@@ -1,7 +1,7 @@
-package com.devansh.rvapp
+package com.devansh.rvapp.ui
 
 import androidx.lifecycle.ViewModel
 
-class MemesViewModel : ViewModel() {
+class TasksViewModel : ViewModel() {
     // TODO: Implement the ViewModel
 }
