@@ -7,15 +7,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.devansh.rvapp.R
-import com.devansh.rvapp.ui.TasksViewModel
+import com.devansh.rvapp.ui.ActivityViewModel
 
-class TasksFragment : Fragment() {
+class ActivityFragment : Fragment() {
 
     companion object {
-        fun newInstance() = TasksFragment()
+        fun newInstance() = ActivityFragment()
     }
 
-    private lateinit var viewModel: TasksViewModel
+    private lateinit var viewModel: ActivityViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,7 +26,7 @@ class TasksFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(TasksViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(ActivityViewModel::class.java)
         // TODO: Use the ViewModel
     }
 

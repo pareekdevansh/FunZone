@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import com.devansh.rvapp.R
 import com.devansh.rvapp.api.RetrofitBuilder
+import com.devansh.rvapp.repository.ActivityRepository
 import com.devansh.rvapp.repository.JokesRepository
 import kotlinx.coroutines.*
 
@@ -17,20 +18,34 @@ class MainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         val jokesRepository = JokesRepository(RetrofitBuilder())
-        var job: Job? = CoroutineScope(Dispatchers.IO).launch {
+        val activityRepository = ActivityRepository(RetrofitBuilder())
+        var job1: Job? = CoroutineScope(Dispatchers.IO).launch {
             val response = jokesRepository.getJoke()
             withContext(Dispatchers.Main) {
                 if (response.isSuccessful) {
 
-                    Log.d("##", response.body().toString())
-                    Log.d("##", response.body()?.setup.toString())
-                    Log.d("##", response.body()?.delivery.toString())
+                    Log.d("#1", response.body().toString())
+                    Log.d("#1", response.body()?.setup.toString())
+                    Log.d("#1", response.body()?.delivery.toString())
                 } else {
-                    Log.d("##", "Error: ${response.message()}")
+                    Log.d("#1", "Error: ${response.message()}")
+                }
+            }
+        }
+        var job2: Job? = CoroutineScope(Dispatchers.IO).launch {
+            val response = activityRepository.getActivity()
+            withContext(Dispatchers.Main) {
+                if (response.isSuccessful) {
+                    Log.d("#2", response.body().toString())
+                    Log.d("#2", response.body()?.activity.toString())
+                } else {
+                    Log.d("#2", "Error: ${response.message()}")
                 }
             }
         }
     }
 
 }
+
+
 

@@ -6,5 +6,5 @@ import retrofit2.http.GET
 
 interface ActivityInterface {
     @GET("activity")
-    suspend fun getTasks(): Response<ActivityResponse>
+    suspend fun getActivity(): Response<ActivityResponse>
 }
