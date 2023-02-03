@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@id/memesFragment"
+        android:icon="@drawable/ic_meme"
+        android:title="@string/memes" />
+    <item
+        android:id="@id/jokesFragment"
+        android:icon="@drawable/ic_joke"
+        android:title="@string/jokes" />
+    <item
+        android:id="@id/activityFragment"
+        android:icon="@drawable/ic_activity"
+        android:title="@string/activity" />
+</menu>

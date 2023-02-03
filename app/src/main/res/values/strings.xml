@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">rvApp</string>
+    <string name="MEMES_FRAGMENT">memesFragment</string>
+    <string name="JOKES_FRAGMENT">jokesFragment</string>
+    <string name="ACTIVITY_FRAGMENT">activityFragment</string>
+    <string name="memes">Memes</string>
+    <string name="jokes">Jokes</string>
+    <string name="activity">Activity</string>
 </resources>

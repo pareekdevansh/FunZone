@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/memesFragment">
+    <fragment
+        android:id="@+id/memesFragment"
+        android:name="com.devansh.rvapp.ui.fragment.MemesFragment"
+        android:label="fragment_memes"
+        tools:layout="@layout/fragment_memes" />
+    <fragment
+        android:id="@+id/jokesFragment"
+        android:name="com.devansh.rvapp.ui.fragment.JokesFragment"
+        android:label="fragment_jokes"
+        tools:layout="@layout/fragment_jokes" />
+    <fragment
+        android:id="@+id/activityFragment"
+        android:name="com.devansh.rvapp.ui.fragment.ActivityFragment"
+        android:label="fragment_tasks"
+        tools:layout="@layout/fragment_activity" />
+</navigation>

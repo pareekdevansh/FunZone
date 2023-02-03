@@ -4,6 +4,7 @@ pluginManagement {
         mavenCentral()
         gradlePluginPortal()
     }
+
 }
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
@@ -11,6 +12,11 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
     }
+//    dependencies {
+//        def nav_version = "2.5.3"
+//        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
+//    }
+
 }
 rootProject.name = "rvApp"
 include ':app'

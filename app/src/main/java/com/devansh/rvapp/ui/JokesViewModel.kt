@@ -3,10 +3,26 @@ package com.devansh.rvapp.ui
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.viewmodel.initializer
+import androidx.lifecycle.viewmodel.viewModelFactory
+import com.devansh.rvapp.api.RetrofitBuilder
+import com.devansh.rvapp.repository.ActivityRepository
 import com.devansh.rvapp.repository.JokesRepository
 import kotlinx.coroutines.*
 
-class JokesViewModel constructor(private val jokesRepository: JokesRepository) : ViewModel() {
+class JokesViewModel (private val jokesRepository: JokesRepository) : ViewModel() {
+    companion object {
+        val Factory: ViewModelProvider.Factory = viewModelFactory {
+            initializer {
+                val jokesRepository = JokesRepository(RetrofitBuilder())
+                JokesViewModel(
+                    jokesRepository = jokesRepository
+                )
+            }
+        }
+    }
+
     val setup = MutableLiveData<String>()
     val delivery = MutableLiveData<String>()
     val errorMessage = MutableLiveData<String>()

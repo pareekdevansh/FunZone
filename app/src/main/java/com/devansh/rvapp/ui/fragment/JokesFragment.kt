@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import com.devansh.rvapp.ui.JokesViewModel
 import com.devansh.rvapp.R
 
@@ -26,10 +27,8 @@ class JokesFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(JokesViewModel::class.java)
-        // TODO: Use the ViewModel
-
-
+        val viewModel: JokesViewModel by viewModels { JokesViewModel.Factory }
+        //TODO : Use the viewmodel
     }
 
 }
