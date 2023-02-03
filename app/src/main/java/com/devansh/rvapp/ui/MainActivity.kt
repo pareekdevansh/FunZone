@@ -7,6 +7,7 @@ import com.devansh.rvapp.R
 import com.devansh.rvapp.api.RetrofitBuilder
 import com.devansh.rvapp.repository.ActivityRepository
 import com.devansh.rvapp.repository.JokesRepository
+import com.devansh.rvapp.repository.MemeRepository
 import kotlinx.coroutines.*
 
 class MainActivity : AppCompatActivity() {
@@ -40,6 +41,19 @@ class MainActivity : AppCompatActivity() {
                     Log.d("#2", response.body()?.activity.toString())
                 } else {
                     Log.d("#2", "Error: ${response.message()}")
+                }
+            }
+        }
+
+        val job3 : Job? = CoroutineScope(Dispatchers.IO).launch {
+            val response = MemeRepository(RetrofitBuilder()).getMemes()
+            withContext(Dispatchers.Main){
+                if(response.isSuccessful){
+                    Log.d("#3" , response.body()?.data.toString())
+                }
+                else{
+                    Log.d("#3" , "Error : ${response.message()}")
+
                 }
             }
         }

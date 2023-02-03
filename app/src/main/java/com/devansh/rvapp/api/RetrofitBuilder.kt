@@ -2,6 +2,8 @@ package com.devansh.rvapp.api
 
 import com.devansh.rvapp.util.Constants.Companion.ACTIVITY_BASE_URL
 import com.devansh.rvapp.util.Constants.Companion.JOKE_BASE_URL
+import com.devansh.rvapp.util.Constants.Companion.MEME_BASE_URL
+import com.google.gson.Gson
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -17,5 +19,12 @@ class RetrofitBuilder {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(ActivityInterface::class.java)
+    }
+
+    fun getMemeApiInterface() : MemeInterface{
+        return Retrofit.Builder().baseUrl(MEME_BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(MemeInterface::class.java)
     }
 }
